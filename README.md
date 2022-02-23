@@ -12,12 +12,12 @@ retrying flakey tests will actually increase the noise in your tests.
 1. [Define signal versus noise](https://docs.google.com/presentation/d/1TffyautuQJXdeEhgYKYYICgh6nhfBvvWosV9WPrgDwI/edit#slide=id.g116f8da5611_0_1)
 1. [Describe how to handle test noise](https://docs.google.com/presentation/d/1TffyautuQJXdeEhgYKYYICgh6nhfBvvWosV9WPrgDwI/edit#slide=id.g116f8da5611_0_44)
 1. Show examples of passing tests:
-    a. Test that passes (success + signal)
-    b. Test that passes but shouldn’t (success but should fail) (`test_get_most_recent`)
+    1. Test that passes (success + signal)
+    1. Test that passes but shouldn’t (success but should fail) (`test_get_most_recent`)
 1. Fix the test that passes but shouldn't
 1. Show examples of failing tests:
-    a. Failure that provides new information
-    b. Failure that doesn’t provide new information
+    1. Failure that provides new information
+    1. Failure that doesn’t provide new information
 1. Fix the failing tests
 1. [Describe flakey tests](https://docs.google.com/presentation/d/1TffyautuQJXdeEhgYKYYICgh6nhfBvvWosV9WPrgDwI/edit#slide=id.g116f8da5611_0_34)
 1. Show example of a flakey test
