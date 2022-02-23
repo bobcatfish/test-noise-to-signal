@@ -1,0 +1,22 @@
+# See https://github.com/bobcatfish/better-bug-trap/blob/main/.github/workflows/tests.yaml
+name: Run Python unit tests
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+  schedule:
+  - cron: '*/5 * * * *'
+
+jobs:
+  test:
+    # using this condition to run after merge; we only want to run on the closed event type if the closing action was to merge
+    if: github.event_name == 'schedule' || github.event.action == 'opened' || github.event.action == 'synchronize' || github.event.action == 'reopened' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: Run tests
+        run: python -m unittest discover ./ '*_test.py'
