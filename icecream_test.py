@@ -31,5 +31,26 @@ class TestOrder(unittest.TestCase):
         self.assertEqual(most_recent, "rainbow sprinkle")
 
 
+def _generate_mr_freezie_order():
+    '''Just a dummy method for demo purposes'''
+    return []
+
+
+def _assert_order_updated(o):
+    '''Just a dummy method for demo purposes'''
+    pass
+
+
+class TestMrFreezie(unittest.TestCase):
+
+    def test_process_order(self):
+        ''' This is a flakey test! '''
+        order = _generate_mr_freezie_order()
+        mrf = icecream.MrFreezie()
+        mrf.connect()
+        mrf.process_order(order)
+        _assert_order_updated(order)
+
+
 if __name__ == '__main__':
     unittest.main()
