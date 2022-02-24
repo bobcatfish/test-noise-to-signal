@@ -43,9 +43,7 @@ class TestOrder(unittest.TestCase):
         most_recent = orders.get_most_recent()
         self.assertEqual(most_recent, "rainbow sprinkle")
 
-    @unittest.skip("This test will fail - on purpose!")
     def test_submit_orders(self):
-        '''This test will fail because the logic is broken'''
         orders = _get_seeded_orders()
 
         provider = IceCreamProviderFake()
@@ -54,11 +52,13 @@ class TestOrder(unittest.TestCase):
         orders.submit_orders(provider)
         self.assertEqual(len(orders.orders), 0)
 
-    @unittest.skip("This test will fail - on purpose!")
-    def test_get_total_orders(self):
-        '''This test will fail b/c the test is broken'''
-        orders = _get_seeded_orders()
+    def test_get_total_orders_no_orders(self):
+        orders = icecream.Orders()
         self.assertEqual(orders.get_total_orders(), 0)
+
+    def test_get_total_orders_some_orders(self):
+        orders = _get_seeded_orders()
+        self.assertEqual(orders.get_total_orders(), 3)
 
 
 def _generate_mr_freezie_order():
