@@ -43,9 +43,7 @@ class TestOrder(unittest.TestCase):
         most_recent = orders.get_most_recent()
         self.assertEqual(most_recent, "rainbow sprinkle")
 
-    @unittest.skip("This test will fail - on purpose!")
     def test_submit_orders(self):
-        '''This test will fail because the logic is broken'''
         orders = _get_seeded_orders()
 
         provider = IceCreamProviderFake()

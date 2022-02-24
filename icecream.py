@@ -25,6 +25,7 @@ class Orders:
     def submit_orders(self, service):
         for _, order in self.orders.items():
             service.process_order(order)
+        self.orders.clear()
 
 
 class MrFreezie():
