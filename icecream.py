@@ -1,3 +1,4 @@
+import backoff
 import collections
 import random
 
@@ -29,6 +30,7 @@ class Orders:
 
 
 class MrFreezie():
+    @backoff.on_exception(backoff.expo, NetworkException)
     def connect(self):
         if not bool(random.getrandbits(1)):
             raise NetworkException("NETWORK TROUBLE")

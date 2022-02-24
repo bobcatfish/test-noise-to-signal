@@ -74,7 +74,6 @@ def _assert_order_updated(o):
 class TestMrFreezie(unittest.TestCase):
 
     def test_process_order(self):
-        ''' This is a flakey test! '''
         order = _generate_mr_freezie_order()
         mrf = icecream.MrFreezie()
         mrf.connect()
