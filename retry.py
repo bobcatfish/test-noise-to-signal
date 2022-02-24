@@ -10,6 +10,7 @@ def retry(retries):
             for i in range(retries+1):
                 try:
                     func(*args, **kwargs)
+                    return
                 except Exception as e:
                     if i == retries:
                         raise Exception(
