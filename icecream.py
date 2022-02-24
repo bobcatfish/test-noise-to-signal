@@ -16,7 +16,7 @@ class Orders:
         self.orders[date].append(order)
 
     def get_most_recent(self):
-        most_recent_key = list(self.orders)[-1]
+        most_recent_key = sorted(self.orders.keys())[-1]
         return self.orders[most_recent_key][0]
 
     def get_total_orders(self):

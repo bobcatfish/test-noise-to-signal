@@ -18,8 +18,8 @@ class IceCreamProviderFake():
 def _get_seeded_orders():
     orders = icecream.Orders()
     orders.add(datetime.date(2020, 9, 4), "swirl cone")
-    orders.add(datetime.date(2020, 9, 7), "cherry glazed")
     orders.add(datetime.date(2020, 9, 10), "rainbow sprinkle")
+    orders.add(datetime.date(2020, 9, 7), "cherry glazed")
     return orders
 
 
